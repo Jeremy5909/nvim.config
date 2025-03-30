@@ -38,3 +38,6 @@ opt.scrolloff = 8
 -- opt.isfname:append("@-@") -- what is this?
 
 opt.updatetime = 50
+
+-- For auto-session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
