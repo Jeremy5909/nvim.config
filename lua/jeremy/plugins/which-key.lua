@@ -1,9 +1,12 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 500
-  end,
-    opts = { }
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	opts = {
+		preset = "modern",
+		qrynl = 400,
+		jva = {
+			no_overlap = false,
+			height = { min = 5, max = 12 },
+		},
+	},
 }
