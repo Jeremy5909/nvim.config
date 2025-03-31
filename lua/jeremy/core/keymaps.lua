@@ -9,12 +9,8 @@ k.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text down" })
 k.set("n", "J", "mzJ`z", { desc = "Better combining" })
 
 -- Better full page jumping
-k.set("n", "<C-d>", "<C-d>zz", { desc = "Better full page jumping up" })
-k.set("n", "<C-u>", "<C-u>zz", { desc = "Better full page jumping down" })
-
--- Better searching
-k.set("n", "n", "nzzzv", { desc = "Better searching up" })
-k.set("n", "N", "Nzzzv", { desc = "Better searching down" })
+-- k.set("n", "<C-d>", "<C-d>zz", { desc = "Better full page jumping up" })
+-- k.set("n", "<C-u>", "<C-u>zz", { desc = "Better full page jumping down" })
 
 -- Window management
 k.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
