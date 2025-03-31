@@ -16,9 +16,6 @@ k.set("n", "<C-u>", "<C-u>zz", { desc = "Better full page jumping down" })
 k.set("n", "n", "nzzzv", { desc = "Better searching up" })
 k.set("n", "N", "Nzzzv", { desc = "Better searching down" })
 
--- Unbind evil Q
-vim.keymap.set("n", "Q", "<nop>", { desc = "unbind evil q" })
-
 -- Window management
 k.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 k.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
