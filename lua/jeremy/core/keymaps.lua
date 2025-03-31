@@ -13,8 +13,8 @@ k.set("n", "J", "mzJ`z", { desc = "Better combining" })
 -- k.set("n", "<C-u>", "<C-u>zz", { desc = "Better full page jumping down" })
 
 -- Window management
-k.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-k.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+k.set("n", "<leader>s%", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+k.set("n", '<leader>s"', "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 k.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 k.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
