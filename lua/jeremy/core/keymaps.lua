@@ -24,3 +24,6 @@ k.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 k.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 k.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 k.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+-- Lazy
+k.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
