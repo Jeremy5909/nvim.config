@@ -7,9 +7,8 @@ return {
 		local nvimtree = require("nvim-tree")
 
 		-- Disable netrw
-		vim.g.loaded_netrw = 1
-		vim.g.loaded_netrwPlugin = 1
-		require("nvim-tree").setup()
+		-- vim.g.loaded_netrw = 1
+		-- vim.g.loaded_netrwPlugin = 1
 
 		-- Auto close
 		vim.api.nvim_create_autocmd("BufEnter", {
