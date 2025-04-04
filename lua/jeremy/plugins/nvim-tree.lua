@@ -6,10 +6,6 @@ return {
 	config = function()
 		local nvimtree = require("nvim-tree")
 
-		-- Disable netrw
-		-- vim.g.loaded_netrw = 1
-		-- vim.g.loaded_netrwPlugin = 1
-
 		-- Auto close
 		vim.api.nvim_create_autocmd("BufEnter", {
 			group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
@@ -31,7 +27,6 @@ return {
 				width = 35,
 				relativenumber = true,
 			},
-			-- change folder arrow icons
 			renderer = {
 				indent_markers = {
 					enable = true,
@@ -39,8 +34,8 @@ return {
 				icons = {
 					glyphs = {
 						folder = {
-							arrow_closed = "", -- arrow when folder is closed
-							arrow_open = "", -- arrow when folder is open
+							arrow_closed = "",
+							arrow_open = "",
 						},
 					},
 				},
@@ -63,12 +58,11 @@ return {
 			},
 		})
 
-		-- set keymaps
-		local k = vim.keymap -- for conciseness
+		local k = vim.keymap
 
-		k.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-		k.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
-		k.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
-		k.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
+		k.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+		k.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
+		k.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
+		k.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
 	end,
 }

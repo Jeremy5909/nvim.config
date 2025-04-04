@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
 	"numToStr/Comment.nvim",
 	event = { "BufReadPre", "BufNewFile" },

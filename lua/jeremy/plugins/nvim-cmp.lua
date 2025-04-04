@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
@@ -6,10 +7,7 @@ return {
 		"hrsh7th/cmp-path", -- source for file system paths
 		{
 			"L3MON4D3/LuaSnip",
-			-- follow latest release.
 			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-			-- install jsregexp (optional!).
-			build = "make install_jsregexp",
 		},
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
@@ -35,12 +33,12 @@ return {
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+				["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-				["<C-e>"] = cmp.mapping.abort(), -- close completion window
+				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			-- sources for autocompletion
