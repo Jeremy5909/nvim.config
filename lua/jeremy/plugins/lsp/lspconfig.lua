@@ -82,6 +82,24 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["rust_analyzer"] = function()
+				lspconfig["rust_analyzer"].setup({
+					capabilities = capabilities,
+					settings = {
+						["rust-analyzer"] = {
+							check = {
+								command = "clippy",
+							},
+							diagnostics = {
+								enable = true,
+								experimental = {
+									enable = true,
+								},
+							},
+						},
+					},
+				})
+			end,
 			["svelte"] = function()
 				lspconfig["svelte"].setup({
 					capabilities = capabilities,

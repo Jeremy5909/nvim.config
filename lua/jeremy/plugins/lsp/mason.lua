@@ -12,14 +12,15 @@ return {
 		mason.setup()
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"ts_ls",
-				"html",
 				"cssls",
-				"tailwindcss",
-				"svelte",
-				"lua_ls",
 				"emmet_ls",
+				"html",
+				"lua_ls",
 				"pyright",
+				"rust_analyzer",
+				"svelte",
+				"tailwindcss",
+				"ts_ls",
 			},
 		})
 
