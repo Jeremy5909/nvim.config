@@ -12,5 +12,6 @@ return {
 		auto_save = true,
 		auto_create = true,
 		lazy_support = true,
+		suppressed_dirs = { "~/Projects", "~/Downloads", "/", "~/" },
 	},
 }
