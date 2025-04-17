@@ -8,13 +8,19 @@ return {
 
 		-- Automatically launch correct kernel
 		vim.keymap.set({ "n", "v" }, "<leader>mi", function()
-			local venv = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
-			if venv ~= nil then
-				-- in the form of /home/benlubas/.virtualenvs/VENV_NAME
-				venv = string.match(venv, "/.+/(.+)")
-				vim.cmd(("MoltenInit %s"):format(venv))
-			else
-				vim.cmd("MoltenInit python3")
+			local ok, _ = pcall(function()
+				vim.cmd("MoltenLoad")
+			end)
+
+			if not ok then
+				local venv = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
+				if venv ~= nil then
+					-- in the form of /home/benlubas/.virtualenvs/VENV_NAME
+					venv = string.match(venv, "/.+/(.+)")
+					vim.cmd(("MoltenInit %s"):format(venv))
+				else
+					vim.cmd("MoltenInit python3")
+				end
 			end
 		end, { desc = "Initialize Molten for python3", silent = true })
 
@@ -28,5 +34,12 @@ return {
 		)
 		vim.keymap.set("n", "<leader>mx", ":MoltenDelete<CR>", { silent = true, desc = "molten delete cell" })
 		vim.keymap.set("n", "<leader>mh", ":MoltenHideOutput<CR>", { silent = true, desc = "hide output" })
+
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "MoltenDeinitPre",
+			callback = function()
+				vim.cmd("MoltenSave")
+			end,
+		})
 	end,
 }
