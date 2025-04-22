@@ -1,4 +1,4 @@
-Soo i might have `git push --force` and deleted all of the history but it was stinky anyway
+use the iterm2-compatible branch if you use iterm2 because it doesnt have the kitty intergration stuff but i might make it intergrate with iterm2 later
 
 # Installation
 
@@ -7,4 +7,4 @@ Soo i might have `git push --force` and deleted all of the history but it was st
 `cd ~/.config/`
 `git clone https://github.com/Jeremy5909/nvim.git`
 
-idk that should be it lmao
+i think thats it
