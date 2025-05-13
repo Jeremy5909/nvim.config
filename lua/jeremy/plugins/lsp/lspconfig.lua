@@ -24,9 +24,6 @@ return {
 				opts.desc = "Show LSP references"
 				k.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
 
-				opts.desc = "Go to declaration"
-				k.set("n", "gD", vim.lsp.buf.declaration, opts)
-
 				opts.desc = "Show LSP definitions"
 				k.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
@@ -57,7 +54,7 @@ return {
 				opts.desc = "Show documentation for what is under cursor"
 				k.set("n", "K", vim.lsp.buf.hover, opts)
 
-				opts.desc = "show help or smtn"
+				opts.desc = "Signaturre help"
 				k.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 
 				opts.desc = "Restart LSP"
