@@ -19,11 +19,10 @@ k.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make 
 k.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 -- Tabs
-k.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-k.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-k.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-k.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
-k.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+k.set("n", "<C-t>", "<cmd>tabnew<CR>", { desc = "Open new tab" })
+k.set("n", "<C-x>", "<cmd>tabclose<CR>", { desc = "Close current tab" })
+k.set("n", "<C-o>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
+k.set("n", "<C-i>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 
 -- Lazy
 k.set("n", "L", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
