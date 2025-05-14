@@ -4,11 +4,11 @@ return {
 		local ui = require("harpoon.ui")
 		local mark = require("harpoon.mark")
 
-		vim.keymap.set("n", "<leader>hj", function()
+		vim.keymap.set("n", "<leader>jk", function()
 			ui.toggle_quick_menu()
 		end, { desc = "Open harpoon menu" })
 
-		vim.keymap.set("n", "<leader>hh", function()
+		vim.keymap.set("n", "<leader>jj", function()
 			mark.add_file()
 		end, { desc = "Add file to harpoon" })
 
