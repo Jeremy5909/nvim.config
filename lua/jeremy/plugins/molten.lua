@@ -2,6 +2,13 @@ return {
 	"benlubas/molten-nvim",
 	version = "^1.0.0",
 	build = ":UpdateRemotePlugins",
+	keys = {
+		{ "<leader>ml", "<cmd>MoltenEvaluateLine<CR>", desc = "Evaluate line" },
+		{ "<leader>mm", "<cmd>MoltenReevaluateCell<CR>", desc = "Re-evaluate cell" },
+		{ "<leader>mm", "<cmd><C-u>MoltenEvaluateVisual<CR>", desc = "Evaluate visual selection", mode = "v" },
+		{ "<leader>mx", "<cmd>MoltenDelete<CR>", desc = "Delete cell" },
+		{ "<leader>mh", "<cmd>MoltenHideOutput<CR>", desc = "Hide output" },
+	},
 	init = function()
 		vim.g.molten_image_provider = "image.nvim"
 		vim.g.python3_host_prog = vim.fn.expand("~/.venv/neovim/bin/python3")
@@ -23,17 +30,6 @@ return {
 				end
 			end
 		end, { desc = "Initialize Molten for python3", silent = true })
-
-		vim.keymap.set("n", "<leader>ml", ":MoltenEvaluateLine<CR>", { silent = true, desc = "Evaluate line" })
-		vim.keymap.set("n", "<leader>mm", ":MoltenReevaluateCell<CR>", { silent = true, desc = "Re-evaluate cell" })
-		vim.keymap.set(
-			"v",
-			"<leader>mm",
-			":<C-u>MoltenEvaluateVisual<CR>",
-			{ silent = true, desc = "evaluate visual selection" }
-		)
-		vim.keymap.set("n", "<leader>mx", ":MoltenDelete<CR>", { silent = true, desc = "molten delete cell" })
-		vim.keymap.set("n", "<leader>mh", ":MoltenHideOutput<CR>", { silent = true, desc = "hide output" })
 
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "MoltenDeinitPre",
