@@ -17,6 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({ { import = "jeremy.plugins" }, { import = "jeremy.plugins.lsp" } }, {
+	rocks = {
+		hererocks = true,
+	},
 	checker = {
 		enabled = true,
 		notify = false,
