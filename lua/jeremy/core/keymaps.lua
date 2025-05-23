@@ -34,6 +34,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		opts.desc = "Show LSP definitions"
 		k.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
+		opts.desc = "Show LSP definitions in new tab"
+		k.set("n", "gD", "<cmd>tab split | Telescope lsp_definitions<CR>", opts)
+
 		opts.desc = "Show LSP implementations"
 		k.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 
@@ -61,8 +64,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		opts.desc = "Show documentation for what is under cursor"
 		k.set("n", "K", vim.lsp.buf.hover, opts)
 
-		opts.desc = "Signaturre help"
-		k.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+		opts.desc = "Signature help"
+		k.set({ "i", "s" }, "<C-h>", vim.lsp.buf.signature_help, opts)
 
 		opts.desc = "Restart LSP"
 		k.set("n", "<leader>rs", ":LspRestart<CR>", opts)
