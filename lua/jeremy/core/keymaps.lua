@@ -49,11 +49,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		opts.desc = "Smart rename"
 		k.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
-		opts.desc = "Show buffer diagnostics"
-		k.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
-		opts.desc = "Show line diagnostics"
-		k.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+		opts.desc = "Show diagnostics"
+		k.set("n", "<leader>d", "<cmd>Telescope diagnostics<CR>", opts)
 
 		opts.desc = "Go to previous diagnostic"
 		k.set("n", "[d", vim.diagnostic.goto_prev, opts)
