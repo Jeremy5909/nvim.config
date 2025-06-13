@@ -1,5 +1,6 @@
 return {
 	"tpope/vim-fugitive",
+	lazy = false,
 	keys = {
 		{ "<leader>gw", "<cmd>Gw<CR>", desc = "git add {current file}" },
 		{ "<leader>gs", "<cmd>G status<CR>", desc = "git status" },
