@@ -29,28 +29,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = ev.buf, silent = true }
 
 		opts.desc = "Show LSP references"
-		k.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
+		k.set("n", "<leader>cr", "<cmd>Telescope lsp_references<CR>", opts)
 
 		opts.desc = "Show LSP definitions"
-		k.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+		k.set("n", "<leader>cd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
 		opts.desc = "Show LSP definitions in new tab"
-		k.set("n", "gD", "<cmd>tab split | Telescope lsp_definitions<CR>", opts)
+		k.set("n", "<leader>cD", "<cmd>tab split | Telescope lsp_definitions<CR>", opts)
 
 		opts.desc = "Show LSP implementations"
-		k.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+		k.set("n", "<leader>ci", "<cmd>Telescope lsp_implementations<CR>", opts)
 
 		opts.desc = "Show LSP type definitions"
-		k.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+		k.set("n", "<leader>ct", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+
+		opts.desc = "Search workspace symbols"
+		k.set("n", "<leader>cs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
 
 		opts.desc = "See available code actions"
 		k.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
+		opts.desc = "Show diagnostics"
+		k.set("n", "<leader>cd", "<cmd>Telescope diagnostics<CR>", opts)
+
 		opts.desc = "Smart rename"
 		k.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-		opts.desc = "Show diagnostics"
-		k.set("n", "<leader>d", "<cmd>Telescope diagnostics<CR>", opts)
 
 		opts.desc = "Go to previous diagnostic"
 		k.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -63,8 +66,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		opts.desc = "Signature help"
 		k.set({ "i", "s" }, "<C-h>", vim.lsp.buf.signature_help, opts)
-
-		opts.desc = "Restart LSP"
-		k.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 	end,
 })
