@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		k.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
 		opts.desc = "Show diagnostics"
-		k.set("n", "<leader>cd", "<cmd>Telescope diagnostics<CR>", opts)
+		k.set("n", "<leader>cr", "<cmd>Telescope diagnostics<CR>", opts)
 
 		opts.desc = "Smart rename"
 		k.set("n", "<leader>rn", vim.lsp.buf.rename, opts)

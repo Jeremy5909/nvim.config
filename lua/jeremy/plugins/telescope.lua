@@ -21,6 +21,11 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
+				pickers = {
+					lsp_dynamic_workspace_symbols = {
+						sorter = require("telescope").extensions.fzf.native_fzf_sorter(),
+					},
+				},
 			},
 		})
 
