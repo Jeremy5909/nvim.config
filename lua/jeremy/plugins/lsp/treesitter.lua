@@ -4,12 +4,14 @@ return {
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 	},
-	config = function()
-		require("nvim-treesitter.configs").setup({
+  opts = {
 			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = true },
 			autotag = { enable = true },
-		})
-	end,
+  },
+  -- config = function(_, opts) 
+  --   require("nvim-treesitter.configs").setup(opts)
+  -- end
+  
 }
