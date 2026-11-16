@@ -5,7 +5,7 @@ return {
 	keys = {
 		{ "<leader>ml", "<cmd>MoltenEvaluateLine<CR>", desc = "Evaluate line" },
 		{ "<leader>mm", "<cmd>MoltenReevaluateCell<CR>", desc = "Re-evaluate cell" },
-		{ "<leader>mm", "<cmd><C-u>MoltenEvaluateVisual<CR>", desc = "Evaluate visual selection", mode = "v" },
+		{ "<leader>mm", ":<C-u>MoltenEvaluateVisual<CR>gv", desc = "Evaluate visual selection", mode = "v" },
 		{ "<leader>mx", "<cmd>MoltenDelete<CR>", desc = "Delete cell" },
 		{ "<leader>mh", "<cmd>MoltenHideOutput<CR>", desc = "Hide output" },
 	},

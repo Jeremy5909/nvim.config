@@ -50,16 +50,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		k.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
 		opts.desc = "Show diagnostics"
-		k.set("n", "<leader>cr", "<cmd>Telescope diagnostics<CR>", opts)
+		k.set("n", "<leader>ce", "<cmd>Telescope diagnostics<CR>", opts)
 
 		opts.desc = "Smart rename"
 		k.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 		opts.desc = "Go to previous diagnostic"
-		k.set("n", "[d", vim.diagnostic.goto_prev, opts)
+		k.set("n", "[d", function()
+			vim.diagnostic.jump({ count = -1, float = true })
+		end, opts)
 
 		opts.desc = "Go to next diagnostic"
-		k.set("n", "]d", vim.diagnostic.goto_next, opts)
+		k.set("n", "]d", function()
+			vim.diagnostic.jump({ count = 1, float = true })
+		end, opts)
 
 		opts.desc = "Show documentation for what is under cursor"
 		k.set("n", "K", vim.lsp.buf.hover, opts)

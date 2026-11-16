@@ -1,12 +1,9 @@
 return {
 	"stevearc/oil.nvim",
-	---@module "oil",
-	---@type oil.SetupOpts
-	opts = {},
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	lazy = false,
 	keys = {
-		{ "-", "<CMD>Oil --float<Cr>", { desc = "Open parent directory" } },
+		{ "-", "<CMD>Oil --float<CR>", desc = "Open parent directory" },
 	},
 	config = function()
 		require("oil").setup({

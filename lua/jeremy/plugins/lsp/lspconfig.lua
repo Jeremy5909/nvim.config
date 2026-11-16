@@ -6,6 +6,11 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
+		-- tell every server what nvim-cmp supports (snippets, resolve, etc.)
+		vim.lsp.config("*", {
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		})
+
 		vim.lsp.enable("jdtls")
 
 		vim.lsp.inlay_hint.enable(true)

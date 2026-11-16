@@ -4,7 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
-		"folke/todo-comments.nvim",
+		{ "folke/todo-comments.nvim", opts = {} },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -20,10 +20,10 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
-				pickers = {
-					lsp_dynamic_workspace_symbols = {
-						sorter = require("telescope").extensions.fzf.native_fzf_sorter(),
-					},
+			},
+			pickers = {
+				lsp_dynamic_workspace_symbols = {
+					sorter = require("telescope").extensions.fzf.native_fzf_sorter(),
 				},
 			},
 		})

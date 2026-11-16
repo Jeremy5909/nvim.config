@@ -1,5 +1,7 @@
 return {
 	"stevearc/conform.nvim",
+	event = "BufWritePre",
+	cmd = "ConformInfo",
 	opts = {
 		formatters_by_ft = {
 			javascript = { "prettier" },
@@ -16,8 +18,7 @@ return {
 			rust = { "rustfmt", lsp_format = "fallback" },
 		},
 		format_on_save = {
-			lsp_fallback = true,
-			async = false,
+			lsp_format = "fallback",
 			timeout_ms = 1000,
 		},
 	},
